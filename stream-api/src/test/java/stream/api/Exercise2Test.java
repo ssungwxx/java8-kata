@@ -29,8 +29,7 @@ public class Exercise2Test extends ClassicOnlineStore {
          */
         Stream<Integer> sortedAgeStream = customerList.stream()
                 .map(Customer::getAge)
-                .sorted((Integer o1, Integer o2) -> o1.compareTo(o2)
-        );
+                .sorted();
 
         List<Integer> sortedAgeList = sortedAgeStream.collect(Collectors.toList());
         assertThat(sortedAgeList, contains(21, 22, 22, 26, 27, 28, 32, 35, 36, 38));

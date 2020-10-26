@@ -61,8 +61,8 @@ public class Exercise2Test extends ClassicOnlineStore {
          */
         Stream<String> top3RichCustomerStream = customerList.stream()
                 .sorted((Customer o1, Customer o2) -> o2.getBudget().compareTo(o1.getBudget()))
-                .map(Customer::getName)
-                .limit(3);
+                .limit(3)
+                .map(Customer::getName);
 
         List<String> top3RichCustomerList = top3RichCustomerStream.collect(Collectors.toList());
         assertThat(top3RichCustomerList, contains("Diana", "Andrew", "Chris"));
